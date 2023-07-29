@@ -17,7 +17,7 @@ const FeedComment = ({ taleId, userId }: FeedCommentProp) => {
 
     useEffect(() => {
         if (comments) setSearch(state => ({ ...state, last: comments[comments.length - 1] }))
-    }, [comments])
+    }, [comments, setSearch])
 
     useEffect(() => {
         refetch()

@@ -17,7 +17,7 @@ const Feeds = ({}: FeedsProp) => {
 
     useEffect(() => {
         if (tales) setSearch(state => ({ ...state, last: tales[tales.length - 1] }))
-    }, [tales])
+    }, [tales, setSearch])
 
     return (
         <div className="w-full">
