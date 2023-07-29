@@ -60,4 +60,4 @@ To contribute:
 This project is licensed under the [MIT License](LICENSE).
 
 ## Live Demo
-Check out the live demo of the Anonymous Tale Sharing Website [here](https://anontales-9647wve87-fredrickreuben.vercel.app/).
+Check out the live demo of the Anonymous Tale Sharing Website [here](https://anontales.vercel.app).
