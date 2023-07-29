@@ -48,7 +48,7 @@ const Editor = ({ loading, content, success, isEdit, className, onSave, ...props
                 data: body.content,
             })
         }
-    }, [content])
+    }, [content, editorId])
 
     React.useEffect(() => {
         if (typeof window !== 'undefined') setIsMounted(true)
