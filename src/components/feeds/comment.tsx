@@ -5,7 +5,7 @@ import { useFetchUserQuery } from '@anontales/domain/api/users'
 
 interface CommentProp extends React.HTMLAttributes<HTMLElement> {}
 
-const comment = ({ userId, message }: CommentProp & Comment) => {
+const Comment = ({ userId, message }: CommentProp & Comment) => {
 
     const { data: user } = useFetchUserQuery(userId)
 
@@ -22,4 +22,4 @@ const comment = ({ userId, message }: CommentProp & Comment) => {
     )
 }
 
-export default comment
+export default Comment
