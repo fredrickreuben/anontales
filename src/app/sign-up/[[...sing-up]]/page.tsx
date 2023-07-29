@@ -1,14 +1,14 @@
 import { ClerkLoaded, ClerkLoading, SignUp } from '@clerk/nextjs'
 import { buttonVariants } from '@anontales/components/ui/button'
-import LoadingPage from '@anontales/app/loading'
 import { cn } from '@anontales/lib/utils'
 import React from 'react'
+import AuthSkeleton from '@anontales/components/skeleton/auth'
 
 const SignUpPage = () => {
     return (
         <div className="flex justify-center py-10">
             <ClerkLoading>
-                <LoadingPage />
+                <AuthSkeleton/>
             </ClerkLoading>
             <ClerkLoaded>
                 <SignUp

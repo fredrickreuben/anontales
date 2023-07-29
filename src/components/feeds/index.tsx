@@ -1,15 +1,14 @@
 import { useFetchTalesQuery } from '@anontales/domain/api/tales'
 import useSearch from '@anontales/hooks/use-search'
 import React, { useEffect, useState } from 'react'
+import { useAuth } from '@clerk/nextjs'
+import FeedsSkeleton from '../skeleton'
 import Error from '../helpers/error'
 import Feed from './feed'
-import FeedsSkeleton from './skeleton'
-import { useAuth } from '@clerk/nextjs'
 
 interface FeedsProp extends React.HTMLAttributes<HTMLElement> {}
 
-const Feeds = ({ }: FeedsProp) => {
-    
+const Feeds = ({}: FeedsProp) => {
     const { userId } = useAuth()
 
     const { data: tales, isLoading, isError, refetch } = useFetchTalesQuery({ limit: 10, query: '' })
@@ -20,7 +19,7 @@ const Feeds = ({ }: FeedsProp) => {
         if (tales) setSearch(state => ({ ...state, last: tales[tales.length - 1] }))
     }, [tales])
 
-    return ( 
+    return (
         <div className="w-full">
             {(!tales || tales?.length == 0) && isLoading ? (
                 <FeedsSkeleton />

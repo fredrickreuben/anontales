@@ -3,9 +3,9 @@ import '@anontales/assets/styles/editor.css'
 import { talePatchSchema } from '@anontales/lib/validation/tale'
 import EditorJS, { OutputData } from '@editorjs/editorjs'
 import { FormProvider, useForm } from 'react-hook-form'
-import EditorSkeleton from '../feeds/skeleton/editor'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, buttonVariants } from '../ui/button'
+import EditorSkeleton from '../skeleton/editor'
 import { cn } from '@anontales/lib/utils'
 import React, { useId } from 'react'
 import { Icons } from './icons'
@@ -24,7 +24,7 @@ type FormData = z.infer<typeof talePatchSchema>
 const Editor = ({ loading, content, success, isEdit, className, onSave, ...props }: EditorProps) => {
     const buttonId = useId()
     const editorId = useId()
-    
+
     const ref = React.useRef<EditorJS>()
 
     const methods = useForm<FormData>({

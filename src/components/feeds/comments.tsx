@@ -1,9 +1,9 @@
 import { useFetchCommentsQuery } from '@anontales/domain/api/comments'
-import CommentsSkeleton from './skeleton/comments'
-import CreateComment from './create-comments'
-import Comment from './comment'
-import React, { useEffect } from 'react'
 import useSearch from '@anontales/hooks/use-search'
+import CommentsSkeleton from '../skeleton/comments'
+import CreateComment from './create-comments'
+import React, { useEffect } from 'react'
+import Comment from './comment'
 
 interface FeedCommentProp extends React.HTMLAttributes<HTMLElement> {
     taleId: string
@@ -11,7 +11,6 @@ interface FeedCommentProp extends React.HTMLAttributes<HTMLElement> {
 }
 
 const FeedComment = ({ taleId, userId }: FeedCommentProp) => {
-
     const { data: comments, isLoading, isError, refetch } = useFetchCommentsQuery({ limit: 10, query: taleId })
 
     const { search, setSearch } = useSearch({ limit: 10, query: taleId }, refetch)
