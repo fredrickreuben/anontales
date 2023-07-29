@@ -26,7 +26,7 @@ const FeedComment = ({ taleId, userId }: FeedCommentProp) => {
     return (
         <div className="flex flex-col w-full">
             {userId && <CreateComment taleId={taleId} userId={userId} />}
-            {isLoading ? <CommentsSkeleton taleId={taleId} /> : comments?.map(comment => <Comment {...comment} />)}
+            {isLoading ? <CommentsSkeleton taleId={taleId} /> : comments?.map(comment => <Comment key={comment.id} {...comment} />)}
         </div>
     )
 }
