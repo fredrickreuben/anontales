@@ -7,7 +7,7 @@ const useSearch = (query: SearchQuery, refetch: () => void) => {
 
     useEffect(() => {
         refetch()
-    }, [search])
+    }, [search, refetch])
 
     return { search, setSearch }
 }

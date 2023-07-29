@@ -19,6 +19,10 @@ const FeedComment = ({ taleId, userId }: FeedCommentProp) => {
         if (comments) setSearch(state => ({ ...state, last: comments[comments.length - 1] }))
     }, [comments])
 
+    useEffect(() => {
+        refetch()
+    }, [search, refetch])
+
     return (
         <div className="flex flex-col w-full">
             {userId && <CreateComment taleId={taleId} userId={userId} />}
