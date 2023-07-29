@@ -23,9 +23,9 @@ import {
   MoreVerticalIcon,
   FileEdit,
   SendHorizonal,
-  X,
-  type Icon as LucideIcon,
   Facebook,
+  X,
+  LucideIcon
 } from "lucide-react"
 
 export type Icon = LucideIcon
