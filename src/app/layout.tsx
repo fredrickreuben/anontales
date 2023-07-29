@@ -58,7 +58,7 @@ export const metadata = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning className='scroll-smooth'>
             <head />
             <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
                 <MainProvider>

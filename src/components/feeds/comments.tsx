@@ -24,7 +24,7 @@ const FeedComment = ({ taleId, userId }: FeedCommentProp) => {
     }, [search, refetch])
 
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full max-h-[500px] overflow-y-auto">
             {userId && <CreateComment taleId={taleId} userId={userId} />}
             {isLoading ? <CommentsSkeleton taleId={taleId} /> : comments?.map(comment => <Comment key={comment.id} {...comment} />)}
         </div>
